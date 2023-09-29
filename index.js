@@ -27,20 +27,6 @@ app.post('/',async(req,res)=>{
       })
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.listen(3001,function(){
     console.log("Example app is listening on port 3001");
 })
