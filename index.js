@@ -23,6 +23,7 @@ res.json({
 
 app.post('/',async(req,res)=>{
   const {message,model}=req.body;
+  console.log(model)
     const response = await openai.completions.create({
         model:`${model}`,
         prompt: `${message}`,
