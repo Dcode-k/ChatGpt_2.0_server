@@ -14,18 +14,10 @@ const openai = new OpenAI({
 });
 
 
-app.get('/models',async(req,res)=>{
-const response = await openai.models.list();
-res.json({
-  models:response.data
-})
-})
-
 app.post('/',async(req,res)=>{
-  const {message,model}=req.body;
-  console.log(model)
+  const {message}=req.body;
     const response = await openai.completions.create({
-        model:`${model}`,
+        model:"gpt-3.5-turbo-instruct",
         prompt: `${message}`,
         max_tokens: 100,
         temperature: 0.5,
